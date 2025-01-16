@@ -1,38 +1,91 @@
-.App {
-  text-align: center;
+/* Import Tailwind base, components, and utilities */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Header styling */
+header ul li {
+  @apply px-2; /* Tailwind utility for consistent padding */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Custom Background Colors */
+.bg-primary {
+  background-color: rgb(5, 5, 61); /* Custom dark primary background color */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* Animated Gradient Background */
+.animated-gradient {
+  background: linear-gradient(45deg, #0a0f29, #1a2b58, #0a0f29); /* Dark gradient */
+  background-size: 400% 400%;
+  animation: gradientAnimation 6s ease infinite; /* Smooth infinite animation */
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
+/* Fade-In Animation */
+@keyframes fadeIn {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: translateY(-20px);
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translateY(0);
   }
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-out; /* Apply fade-in animation with a smooth transition */
+}
+
+/* Global Body Styling */
+body {
+  margin: 0; /* Remove default browser margin */
+  font-family: Arial, sans-serif; /* Set default font family */
+  color: white; /* Default text color */
+  background-color: #0a0f29; /* Fallback background for non-animated elements */
+}
+
+/* Utility Classes */
+.text-gradient {
+  background: linear-gradient(90deg, #00d4ff, #00ffa3);
+  -webkit-background-clip: text; /* Ensure gradient applies to text */
+  -webkit-text-fill-color: transparent; /* Make the background visible in text */
+}
+
+.rounded-border {
+  border: 4px solid #1a2b58;
+  border-radius: 8px;
+}
+
+/* Button Hover Effects */
+.btn-primary {
+  @apply px-6 py-2 bg-cyan-500 text-white font-medium rounded-lg;
+}
+
+.btn-primary:hover {
+  @apply bg-cyan-600;
+}
+
+.btn-outline {
+  @apply px-6 py-2 border-2 border-cyan-500 text-cyan-500 font-medium rounded-lg;
+}
+
+.btn-outline:hover {
+  @apply bg-cyan-500 text-white;
+}
+
+/* Utility for Responsive Layout Adjustments */
+.responsive-padding {
+  @apply px-4 md:px-8 lg:px-16;
 }
