@@ -8,9 +8,9 @@ export default function Header() {
     <header className="shared-background text-white px-6 py-4 shadow-md fixed top-0 left-0 w-full z-50">
       <div className="flex justify-between items-center">
         {/* Logo or Brand Name */}
-        <a href="#" className="text-3xl font-bold hover:text-cyan-400">
+        <h1 className="text-3xl font-bold hover:text-cyan-400">
           Akeel
-        </a>
+        </h1>
 
         {/* Hamburger Menu for Mobile */}
         <button
