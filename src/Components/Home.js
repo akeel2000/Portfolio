@@ -41,7 +41,7 @@ const HomePage = () => {
       </div>
 
       {/* Right Section */}
-      <div className="relative mt-6 md:mt-0 mr-40">
+      <div className="relative mt-6 md:mt-0">
         <img
           src={profileImg} // Use the imported image
           alt="Profile"
